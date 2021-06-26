@@ -5,24 +5,23 @@ export const orderBy = (countries, value, direction) => {
     switch (direction) {
         case "asc":
             return [...countries].sort((a, b) => a[value] > b[value] ? 1 : -1)
-        case "des":
+        case "desc":
             return [...countries].sort((a, b) => a[value] > b[value] ? -1 : 1)
-        default :
+        default:
             return countries
-
     }
 }
 
 export const SortArrow = ({direction}) => {
     if (!direction) return null
 
-    if (direction === "des") {
+    if (direction === "asc") {
         return <div className={styles.heading_arrow}>
-            <KeyboardArrowDownRounded color="inherit"/>
+            <KeyboardArrowUpRounded color="inherit"/>
         </div>
     } else {
         return <div className={styles.heading_arrow}>
-            <KeyboardArrowUpRounded color="inherit"/>
+            <KeyboardArrowDownRounded color="inherit"/>
         </div>
     }
 }

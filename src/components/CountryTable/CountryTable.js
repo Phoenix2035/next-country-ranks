@@ -1,6 +1,8 @@
+import Link from "next/link"
+
 import styles from "./CountryTable.module.css"
 
-import {orderBy, numberSeparator, SortArrow} from "../../utils/helpers";
+import {numberSeparator, orderBy, SortArrow} from "../../utils/helpers";
 import {useState} from "react";
 
 
@@ -12,8 +14,8 @@ const CountryTable = ({countries}) => {
 
     const switchDirection = () => {
         if (!dir) {
-            setDir("des")
-        } else if (dir === "des") {
+            setDir("desc")
+        } else if (dir === "desc") {
             setDir("asc")
         } else {
             setDir(null)
@@ -40,15 +42,17 @@ const CountryTable = ({countries}) => {
             </div>
             {
                 orderedCountry.map(item =>
-                    <div className={styles.row} key={item.name}>
-                        <div className={styles.name}>
-                            {item.name}
-                        </div>
+                    <Link href={`/country/${item.alpha3Code}`}>
+                        <div className={styles.row} key={item.name}>
+                            <div className={styles.name}>
+                                {item.name}
+                            </div>
 
-                        <div className={styles.population}>
-                            {numberSeparator(item.population)}
+                            <div className={styles.population}>
+                                {numberSeparator(item.population)}
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 )
             }
         </div>
