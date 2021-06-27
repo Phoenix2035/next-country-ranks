@@ -1,6 +1,6 @@
 .heading {
     display: flex;
-    padding: 20px;
+    padding: 2rem;
 }
 
 .heading button {
@@ -12,7 +12,7 @@
 
 .heading_flag {
     flex: 1;
-    margin-right: 16px;
+    margin-right: 1.6rem;
 }
 
 .heading_name,
@@ -36,16 +36,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 2px;
+    margin-left: .2rem;
 }
 
 .row {
     display: flex;
-    padding: 20px;
+    align-items: center;
+    padding: 2rem;
     text-align: center;
     background-color: var(--background-color-light);
-    border-radius: 8px;
-    margin-bottom: 16px;
+    border-radius: .8rem;
+    margin-bottom: 1.6rem;
     box-shadow: var(--box-shadow);
     font-weight: 500;
     cursor: pointer;
@@ -53,8 +54,8 @@
 }
 
 .row:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-.4rem);
+    box-shadow: 0 .4rem 1.6rem rgba(0, 0, 0, 0.1);
 }
 
 .name {
@@ -76,12 +77,12 @@
 
 .flag {
     flex: 1;
-    margin-right: 16px;
+    margin-right: 1.6rem;
 }
 
 .flag img {
-    border-radius: 2px;
     width: 100%;
+    border-radius: .2rem;
 }
 
 @media screen and (max-width: 720px) {

@@ -1,11 +1,11 @@
-import {useState} from "react";
+import { useState } from "react";
 import styles from "../styles/Home.module.css"
 
 import Layout from "../components/Layout/Layout"
 import SearchInput from "../components/SerachInput/SearchInput";
 import CountryTable from "../components/CountryTable/CountryTable";
 
-function Home({countries}) {
+function Home({ countries }) {
 
     const [keyword, setKeyword] = useState("")
 
@@ -18,11 +18,19 @@ function Home({countries}) {
     const handleSearch = e => {
         setKeyword(e.target.value.toLowerCase())
     }
-    return <Layout>
-        <div className={styles.counts}>Found {countries.length} countries</div>
-        <SearchInput placeholder="Filter by Name, Region or SubRegion" onChange={handleSearch}/>
-        <CountryTable countries={filteredCountries}/>
-    </Layout>
+    return (
+        <Layout>
+            <div className={styles.input_container}>
+                <div className={styles.counts}>Found {countries.length} countries</div>
+
+                <div className={styles.input}>
+                    <SearchInput placeholder="Filter by Name, Region or SubRegion" onChange={handleSearch} />
+                </div>
+
+            </div>
+            <CountryTable countries={filteredCountries} />
+        </Layout>
+    )
 }
 
 export const getStaticProps = async () => {
